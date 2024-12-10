@@ -1,10 +1,19 @@
-import { Image, StyleSheet, Platform, View, Dimensions } from 'react-native';
+import { router } from 'expo-router';
+import { Image, StyleSheet, Platform, View, Text, TouchableOpacity, Dimensions } from 'react-native';
 
 export default function HomeScreen() {
-  return (
-    <View style={styles.tela}>
-    </View>
-  );
+    
+    const sendToTabs = () => {
+        router.push("/(tabs)")
+    } 
+
+    return (
+        <View style={styles.tela}>
+            <View>
+                <Text>Clica aqui</Text>
+            </View>
+        </View>
+    );
 }
 
 const {width, height} = Dimensions.get('window')

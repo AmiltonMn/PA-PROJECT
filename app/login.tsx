@@ -1,14 +1,14 @@
-import { StyleSheet, Image, Platform, View, Dimensions } from 'react-native';
+import { StyleSheet, Image, Platform, View, Text } from 'react-native';
 
 export default function TabTwoScreen() {
   return (
-    <View style={styles.tela}>
-    
+    <View>
+        <Text>
+            Batatinha
+        </Text>
     </View>
   );
 }
-
-const {width, height} = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   headerImage: {
@@ -20,10 +20,5 @@ const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
-  },
-  tela: {
-    width: width,
-    height: height,
-    backgroundColor: '#192870'
   },
 });
