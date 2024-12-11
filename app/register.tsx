@@ -14,14 +14,25 @@ export default function RootLayout() {
     <View style={styles.tela}>
       <View style={styles.quadrado}>
         <Image style={styles.image} source={require("@/assets/images/FERramentariaBaixo.png")}/>
-        <Text style={styles.login}>Login</Text>
+        <Text style={styles.login}>Criar Conta</Text>
         <View>
-          <Text style={styles.titulo}>Usuário ou e-mail</Text>
+          <Text style={styles.titulo}>Usuário</Text>
           <TextInput
             style={styles.input}
             onChangeText={setEmailUsuario}
             value={emailUsuario}
-            placeholder="Digite seu e-mail ou usuário"
+            placeholder="Digite seu usuário"
+            placeholderTextColor={'#A8A6A6'}
+            keyboardType="default"
+          />
+        </View>
+        <View>
+          <Text style={styles.titulo}>E-mail</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={setEmailUsuario}
+            value={emailUsuario}
+            placeholder="Digite seu e-mail"
             placeholderTextColor={'#A8A6A6'}
             keyboardType="default"
           />
@@ -38,14 +49,22 @@ export default function RootLayout() {
             secureTextEntry={true}
           />
         </View>
+        <View>
+          <Text style={styles.titulo}>Confirmar Senha</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={setPass}
+            value={pass}
+            placeholder="Confirme sua senha"
+            placeholderTextColor={'#A8A6A6'}
+            keyboardType="default"
+            secureTextEntry={true}
+          />
+        </View>
 
         <TouchableOpacity style={styles.botao}>
-          <Text style={styles.textBotao}>Logar</Text>
+          <Text style={styles.textBotao}>Cadastrar</Text>
         </TouchableOpacity>
-        <View style={styles.textos}>
-          <Text style={styles.textConta}>Não tem conta? </Text>
-          <Text style={styles.clique}>Clique aqui</Text>
-        </View>
       </View>
     </View>
   );
@@ -113,7 +132,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 44,
-    paddingBottom: 41,
     borderRadius: 5
   },
   image: {
