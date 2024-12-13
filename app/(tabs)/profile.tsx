@@ -1,7 +1,8 @@
 import { router } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Dropdown } from 'react-native-element-dropdown';
 import { Image, StyleSheet, Platform, View, Text, TouchableOpacity, Dimensions, ImageBackground, TextInput } from 'react-native';
+import { MyHeader } from '@/Components/header';
 
 export default function HomeScreen() {
     
@@ -26,6 +27,7 @@ export default function HomeScreen() {
 
     return (
         <View style={styles.tela}>
+          <MyHeader text={"Perfil"}></MyHeader>
           <View style={styles.imageView}>
             <View style={styles.imageBackground}>
               <Image style={styles.image} source={require("@/assets/images/userPlaceholder.png")}/>
@@ -63,7 +65,7 @@ export default function HomeScreen() {
                 valueField="value"
                 placeholder="Select item"
                 searchPlaceholder="Search..."
-                value={value}
+                value={data[0].value}
                 onChange={item => {
                   setValue(item.value);
                 }}

@@ -1,3 +1,4 @@
+import { MyHeader } from '@/Components/header';
 import { router } from 'expo-router';
 import { Image, StyleSheet, Platform, View, Text, TouchableOpacity, Dimensions } from 'react-native';
 
@@ -9,9 +10,7 @@ export default function HomeScreen() {
 
     return (
         <View style={styles.tela}>
-            <View>
-                <Text>Clica aqui</Text>
-            </View>
+            <MyHeader text={"Carrinho"}></MyHeader>
         </View>
     );
 }

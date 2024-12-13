@@ -1,8 +1,10 @@
+import { MyHeader } from '@/Components/header';
 import { Image, StyleSheet, Platform, View, Dimensions } from 'react-native';
 
 export default function HomeScreen() {
   return (
     <View style={styles.tela}>
+      <MyHeader text={'Sobre nós'}></MyHeader>
     </View>
   );
 }

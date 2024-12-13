@@ -1,9 +1,10 @@
+import { MyHeader } from '@/Components/header';
 import { StyleSheet, Image, Platform, View, Dimensions } from 'react-native';
 
 export default function TabTwoScreen() {
   return (
     <View style={styles.tela}>
-    
+      <MyHeader text={"Produtos"}></MyHeader>
     </View>
   );
 }
