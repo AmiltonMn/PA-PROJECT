@@ -63,9 +63,9 @@ export default function HomeScreen() {
                 maxHeight={300}
                 labelField="label"
                 valueField="value"
-                placeholder="Select item"
+                placeholder={data[0].value}
                 searchPlaceholder="Search..."
-                value={data[0].value}
+                value={value}
                 onChange={item => {
                   setValue(item.value);
                 }}
@@ -84,6 +84,8 @@ const {width, height} = Dimensions.get('window')
 const styles = StyleSheet.create({
   placeholderStyle: {
     fontSize: 16,
+    marginLeft: 10,
+    color: 'white'
   },
   icon: {
     marginRight: 5,

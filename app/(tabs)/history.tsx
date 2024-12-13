@@ -1,17 +1,61 @@
 import { MyHeader } from '@/Components/header';
+import { HistoryCard } from '@/Components/HistoryCard';
 import { router } from 'expo-router';
-import { Image, StyleSheet, Platform, View, Text, TouchableOpacity, Dimensions } from 'react-native';
+import { Image, StyleSheet, Platform, View, Text, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
 
 export default function HomeScreen() {
+
+  const data = [
+      {
+          name: 'Chave Inglesa',
+          date: '19/12/24',
+          method: 'Cartão de Crédito',
+          quantity: 10,
+          untiyValue: 14.99,
+          totalValue: 149.99
+      },
+      {
+          name: 'Chave de Fenda',
+          date: '19/12/24',
+          method: 'Cartão de Crédito',
+          quantity: 10,
+          untiyValue: 14.99,
+          totalValue: 149.99
+      },
+      {
+          name: 'Serra elétrica',
+          date: '19/12/24',
+          method: 'Cartão de Crédito',
+          quantity: 10,
+          untiyValue: 14.99,
+          totalValue: 149.99
+      },
+      {
+        name: 'Serra elétrica',
+        date: '19/12/24',
+        method: 'Cartão de Crédito',
+        quantity: 10,
+        untiyValue: 14.99,
+        totalValue: 149.99
+    },
+  ]
     
     const sendToTabs = () => {
         router.push("/(tabs)")
     } 
 
     return (
-        <View style={styles.tela}>
+        <ScrollView style={styles.tela}>
             <MyHeader text={"Histórico"}></MyHeader>
-        </View>
+            {data.map(item => <HistoryCard 
+              name={item.name} 
+              date={item.date}
+              method={item.method}
+              quantity={item.quantity}
+              unityValue={item.untiyValue}
+              totalValue={item.totalValue}
+            ></HistoryCard>)}
+        </ScrollView>
     );
 }
 
