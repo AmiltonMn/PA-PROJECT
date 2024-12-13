@@ -1,9 +1,10 @@
 import { MyHeader } from '@/Components/header';
 import { Image, StyleSheet, Platform, View, Dimensions, Text } from 'react-native';
+import { ScrollView } from 'react-native-reanimated/lib/typescript/Animated';
 
 export default function HomeScreen() {
   return (
-    <View style={styles.tela}>
+    <ScrollView style={styles.tela}>
       <MyHeader text={'Sobre nós'}></MyHeader>
       <View style={styles.quadrados}>
         <View style={styles.quadrado}>
@@ -19,7 +20,7 @@ export default function HomeScreen() {
           <Text style={styles.desc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut leo leo. Nulla lobortis dolor at vehicula iaculis. Ut eget lacus in dolor varius vestibulum nec at odio. Quisque bibendum ornare sem, et ornare magna tempor eget. </Text>
         </View>
       </View>
-    </View>
+    </Scroll>
   );
 }
 
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
     width: width,
     height: height,
     backgroundColor: '#192870',
+    
   },
   title: {
     color: "#F29F05",
