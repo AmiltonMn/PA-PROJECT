@@ -25,7 +25,9 @@ export const Card = ({title, valor, image} : ICard) => {
             <View style={styles.quadrado}>
                 <Text style={styles.title}>{title}</Text>
                 <View style={styles.quadrado2}>
-                    {/* <Image style={styles.image} source={require(image)}/> */}
+                    <View style={styles.imagemQuadrado}>
+                        <Image style={styles.image} source={require('../assets/images/tools.png')}/>
+                    </View>
                     <View style={styles.quadrado3}>
                         <Text style={styles.quantidadeText}>Quantidade</Text>
                         <View style={styles.quantidade}>
@@ -52,25 +54,46 @@ export const Card = ({title, valor, image} : ICard) => {
 }
 
 const styles = StyleSheet.create ({
+    imagemQuadrado: {
+        backgroundColor: "#D9D9D9",
+        opacity: 0.35,
+        padding: 10,
+        borderRadius: 5,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+
+        elevation: 6,
+        height: 190
+    },
     quadrado: {
         padding: 10,
         borderRadius: 5,
-        backgroundColor: "#FFFFFF"
+        backgroundColor: "#FFFFFF",
+        margin: 15
     },
     title: {
         textAlign: "center",
-        fontSize: 17
+        fontSize: 17,
+        fontWeight: "bold"
     },
     quadrado2: {
-        flexDirection: "row"
+        flexDirection: "row",
+        justifyContent: "space-around",
+        paddingTop: 10,
+        alignItems: "center"
     },
     image: {
-        height: 190,
+        height: 170,
         width: 140
     },
     quadrado3: {
         justifyContent: "center",
-        gap: 24
+        gap: 15
     },
     quantidadeText: {
         textAlign: "center",
@@ -99,10 +122,11 @@ const styles = StyleSheet.create ({
         color: "#FFFFFF"
     },
     valor: {
-        textAlign: "center"
+        textAlign: "center",
+        fontSize: 18
     },
     fundo: {
-        padding: 10,
+        padding: 5,
         borderRadius: 10,
         backgroundColor: "#F29F05"
     },
@@ -111,7 +135,7 @@ const styles = StyleSheet.create ({
         textAlign: "center"
     },
     botao: {
-        padding: 10,
+        padding: 5,
         borderRadius: 5,
         backgroundColor: "#F29F05"
     },

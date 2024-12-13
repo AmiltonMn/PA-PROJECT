@@ -6,7 +6,7 @@ export default function TabTwoScreen() {
   return (
     <View style={styles.tela}>
       <MyHeader text={"Produtos"}></MyHeader>
-      <Card image='../../assets/images/home.png' title='Nome da Ferramenta' valor={10.99}></Card>
+      <Card image='../assets/images/home.png' title='Nome da Ferramenta' valor={10.99}></Card>
     </View>
   );
 }
