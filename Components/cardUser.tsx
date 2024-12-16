@@ -2,50 +2,30 @@ import React, { useState } from 'react';
 import { Image, StyleSheet, Platform, View, Text, TouchableOpacity, Dimensions } from 'react-native';
 
 interface ICard {
-    title: string,
-    valor: number
+    nome: string,
+    email: string,
+    admin: boolean
 }
 
-export const Card = ({title, valor} : ICard) => {
-    const [qtd, setQtd] = useState<number>(1);
-
-    function mais(){
-        setQtd(qtd + 1);
-    }
-
-    function menos(){
-        if(qtd > 1){
-            setQtd(qtd - 1);
-        }
-    }
+export const CardUser = ({nome, email, admin} : ICard) => {
 
     return (
         <>
             <View style={styles.quadrado}>
-                <Text style={styles.title}>{title}</Text>
-                <View style={styles.quadrado2}>
-                    <View style={styles.imagemQuadrado}>
-                        <Image style={styles.image} source={require('../assets/images/tools.png')}/>
-                    </View>
-                    <View style={styles.quadrado3}>
-                        <Text style={styles.quantidadeText}>Quantidade</Text>
-                        <View style={styles.quantidade}>
-                            <TouchableOpacity style={styles.simbolo} onPress={menos}>
-                                <Text style={styles.simboloText}>-</Text>
-                            </TouchableOpacity>
-                            <Text style={styles.num}>{qtd}</Text>
-                            <TouchableOpacity style={styles.simbolo} onPress={mais}>
-                                <Text style={styles.simboloText}>+</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <Text style={styles.valor}>Valor</Text>
-                        <View style={styles.fundo}>
-                            <Text style={styles.valorText}>R${(valor * qtd).toFixed(2)}</Text>
-                        </View>
-                        <TouchableOpacity style={styles.botao}>
-                            <Text style={styles.botaoText}>Adicionar ao carrinho</Text>
-                        </TouchableOpacity>
-                    </View>
+                <View style={styles.imagemQuadrado}>
+                    <Image style={styles.image} source={require('../assets/images/tools.png')}/>
+                </View>
+                <View style={styles.textos}>
+                    <Text>{nome}</Text>
+                    <Text>{email}</Text>
+                </View>
+                <View style={styles.quadrado3}>
+                    {admin && 
+                    <TouchableOpacity style={styles.botao}>
+                        <Text style={styles.botaoText}>Tornar Admin</Text>
+                    </TouchableOpacity>}
+                    {admin ? <Text>Admin</Text> : <Text>Membro</Text>}
+                    
                 </View>
             </View>
         </>
@@ -53,11 +33,16 @@ export const Card = ({title, valor} : ICard) => {
 }
 
 const styles = StyleSheet.create ({
+    textos: {
+        alignItems: "center",
+        justifyContent: "center"
+    },
     imagemQuadrado: {
-        backgroundColor: "#D9D9D9",
-        opacity: 0.35,
+        backgroundColor: "#F29F05",
+        width: 70,
+        height: 70,
         padding: 10,
-        borderRadius: 5,
+        borderRadius: 9999,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -67,13 +52,15 @@ const styles = StyleSheet.create ({
         shadowRadius: 4.65,
 
         elevation: 6,
-        height: 190
     },
     quadrado: {
+        flexDirection: "row",
         padding: 10,
         borderRadius: 5,
         backgroundColor: "#FFFFFF",
-        margin: 15
+        margin: 15,
+        gap: 5,
+
     },
     title: {
         textAlign: "center",
@@ -87,8 +74,8 @@ const styles = StyleSheet.create ({
         alignItems: "center"
     },
     image: {
-        height: 170,
-        width: 140
+        height: 50,
+        width: 50
     },
     quadrado3: {
         justifyContent: "center",
