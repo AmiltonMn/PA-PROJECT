@@ -1,11 +1,16 @@
 import { Card } from '@/Components/card';
 import { MyHeader } from '@/Components/header';
-import { StyleSheet, Image, Platform, View, Dimensions } from 'react-native';
+import { StyleSheet, Image, Platform, View, Dimensions, TextInput } from 'react-native';
 
 export default function TabTwoScreen() {
   return (
     <View style={styles.tela}>
       <MyHeader text={"Produtos"}></MyHeader>
+      <View style={{justifyContent: 'center', alignItems: 'center', marginTop: 20}}>
+        <TextInput style={styles.search}
+        placeholder='Pesquise uma ferramenta'
+        ></TextInput>
+      </View>
       <Card image='../assets/images/home.png' title='Nome da Ferramenta' valor={10.99}></Card>
     </View>
   );
@@ -29,4 +34,12 @@ const styles = StyleSheet.create({
     height: height,
     backgroundColor: '#192870'
   },
+  search: {
+    backgroundColor: "#dbdbdb",
+    width: "93%",
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    padding: 10,
+  }
 });

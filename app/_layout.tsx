@@ -23,6 +23,7 @@ export default function RootLayout() {
       <Stack.Screen name='register' options={{headerShown: false}}></Stack.Screen>
       <Stack.Screen name='recoverPass' options={{headerShown: false}}></Stack.Screen>
       <Stack.Screen name='(tabs)' options={{headerShown: false}}></Stack.Screen>
+      <Stack.Screen name='(admin)' options={{headerShown: false}}></Stack.Screen>
       <Stack.Screen name='index' options={{headerShown: false}}></Stack.Screen>
     </Stack>
   );

@@ -5,12 +5,21 @@ export default function HomeScreen() {
     
     const sendToTabs = () => {
         router.push("/(tabs)")
-    } 
+    }
+    
+    const sendToAdmin = () => {
+        router.push("/(admin)")
+    }
 
     return (
         <View style={styles.tela}>
             <View>
                 <TouchableOpacity onPress={sendToTabs}>
+                    <Text>Clica aqui</Text>
+                </TouchableOpacity>
+            </View>
+            <View>
+                <TouchableOpacity onPress={sendToAdmin}>
                     <Text>Clica aqui</Text>
                 </TouchableOpacity>
             </View>

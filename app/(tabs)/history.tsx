@@ -1,7 +1,7 @@
 import { MyHeader } from '@/Components/header';
 import { HistoryCard } from '@/Components/HistoryCard';
 import { router } from 'expo-router';
-import { Image, StyleSheet, Platform, View, Text, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
+import { Image, StyleSheet, Platform, View, Text, TouchableOpacity, Dimensions, ScrollView, TextInput } from 'react-native';
 
 export default function HomeScreen() {
 
@@ -47,6 +47,11 @@ export default function HomeScreen() {
     return (
         <ScrollView style={styles.tela}>
             <MyHeader text={"Histórico"}></MyHeader>
+            <View style={{justifyContent: 'center', alignItems: 'center', marginTop: 20}}>
+              <TextInput style={styles.search}
+              placeholder='Pesquise uma ferramenta'
+              ></TextInput>
+            </View>
             {data.map(item => <HistoryCard 
               name={item.name} 
               date={item.date}
@@ -83,4 +88,12 @@ const styles = StyleSheet.create({
     height: height,
     backgroundColor: '#192870'
   },
+  search: {
+    backgroundColor: "#dbdbdb",
+    width: "90%",
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    padding: 10,
+  }
 });
