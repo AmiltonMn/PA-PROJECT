@@ -1,3 +1,4 @@
+import { CardUser } from '@/Components/cardUser';
 import { MyHeader } from '@/Components/header';
 import { Image, StyleSheet, Platform, View, Dimensions, Text, ScrollView } from 'react-native';
 
@@ -5,6 +6,13 @@ export default function HomeScreen() {
   return (
     <ScrollView style={styles.tela}>
       <MyHeader text={'Sobre nós'}></MyHeader>
+      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
     </ScrollView>
   );
 }

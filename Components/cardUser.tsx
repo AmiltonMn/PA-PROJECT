@@ -41,8 +41,8 @@ const styles = StyleSheet.create ({
         fontSize: 20
     },
     textos: {
-        alignItems: "center",
-        justifyContent: "center"
+        alignItems: "flex-start",
+        justifyContent: "center",
     },
     imagemQuadrado: {
         backgroundColor: "#F29F05",
