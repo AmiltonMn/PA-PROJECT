@@ -1,11 +1,16 @@
 import { Card } from '@/Components/card';
 import { MyHeader } from '@/Components/header';
-import { StyleSheet, Image, Platform, View, Dimensions, ScrollView } from 'react-native';
+import { StyleSheet, Image, Platform, View, Dimensions, TextInput, ScrollView } from 'react-native';
 
 export default function TabTwoScreen() {
   return (
     <ScrollView style={styles.tela}>
       <MyHeader text={"Produtos"}></MyHeader>
+      <View style={{justifyContent: 'center', alignItems: 'center', marginTop: 20}}>
+        <TextInput style={styles.search}
+        placeholder='Pesquise uma ferramenta'
+        ></TextInput>
+      </View>
       <Card title='Martelo' valor={123.88}></Card>
       <Card title='Chave Inglesa' valor={20.81}></Card>
       <Card title='Chave de Fenda' valor={4.95}></Card>
@@ -45,4 +50,12 @@ const styles = StyleSheet.create({
     height: height,
     backgroundColor: '#192870'
   },
+  search: {
+    backgroundColor: "#dbdbdb",
+    width: "93%",
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    padding: 10,
+  }
 });

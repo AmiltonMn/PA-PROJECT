@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useState } from 'react';
 import { Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
@@ -9,6 +10,10 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const [emailUsuario, setEmailUsuario] = useState<string>("");
   const [pass, setPass] = useState<string>("");
+
+  const sendToLogin = () => {
+    router.push('/login')
+  } 
   
   return (
     <View style={styles.tela}>
@@ -65,6 +70,10 @@ export default function RootLayout() {
         <TouchableOpacity style={styles.botao}>
           <Text style={styles.textBotao}>Cadastrar</Text>
         </TouchableOpacity>
+        <View style={styles.textos}>
+          <Text style={styles.textConta}>Já possui conta? </Text>
+          <Text style={styles.clique} onPress={sendToLogin}>Clique aqui</Text>
+        </View>
       </View>
     </View>
   );
@@ -117,15 +126,16 @@ const styles = StyleSheet.create({
     fontSize: 17,
   },
   textConta: {
-    fontSize: 11
+    fontSize: 15
   },
   clique: {
-    fontSize: 11,
+    fontSize: 15,
     color: '#192870',
     fontWeight: 'bold'
   },
   textos: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginBottom: 20
   },
   quadrado: {
     backgroundColor: '#FFFFFF',
