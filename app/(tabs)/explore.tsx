@@ -1,5 +1,4 @@
 import { Card } from '@/Components/card';
-import { CardUser } from '@/Components/cardUser';
 import { MyHeader } from '@/Components/header';
 import { StyleSheet, Image, Platform, View, Dimensions, ScrollView } from 'react-native';
 
@@ -7,8 +6,6 @@ export default function TabTwoScreen() {
   return (
     <ScrollView style={styles.tela}>
       <MyHeader text={"Produtos"}></MyHeader>
-      <CardUser nome='nome' email={"email"} admin={true}></CardUser>
-      <CardUser nome='nome' email={"email"} admin={false}></CardUser>
       <Card title='Martelo' valor={123.88}></Card>
       <Card title='Chave Inglesa' valor={20.81}></Card>
       <Card title='Chave de Fenda' valor={4.95}></Card>

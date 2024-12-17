@@ -12,20 +12,21 @@ export const CardUser = ({nome, email, admin} : ICard) => {
     return (
         <>
             <View style={styles.quadrado}>
-                <View style={styles.imagemQuadrado}>
-                    <Image style={styles.image} source={require('../assets/images/tools.png')}/>
-                </View>
-                <View style={styles.textos}>
-                    <Text>{nome}</Text>
-                    <Text>{email}</Text>
+                <View style={styles.quadrado2}>
+                    <View style={styles.imagemQuadrado}>
+                        <Image style={styles.image} source={require('../assets/images/tools.png')}/>
+                    </View>
+                    <View style={styles.textos}>
+                        <Text style={styles.texto}>{nome}</Text>
+                        <Text style={styles.texto}>{email}</Text>
+                    </View>
                 </View>
                 <View style={styles.quadrado3}>
+                    <Text style={styles.membro}>{admin ? 'Membro' : 'Admin'}</Text>
                     {admin && 
                     <TouchableOpacity style={styles.botao}>
                         <Text style={styles.botaoText}>Tornar Admin</Text>
                     </TouchableOpacity>}
-                    {admin ? <Text>Admin</Text> : <Text>Membro</Text>}
-                    
                 </View>
             </View>
         </>
@@ -33,6 +34,12 @@ export const CardUser = ({nome, email, admin} : ICard) => {
 }
 
 const styles = StyleSheet.create ({
+    membro: {
+        fontSize: 20
+    },
+    texto: {
+        fontSize: 20
+    },
     textos: {
         alignItems: "center",
         justifyContent: "center"
@@ -60,7 +67,7 @@ const styles = StyleSheet.create ({
         backgroundColor: "#FFFFFF",
         margin: 15,
         gap: 5,
-
+        justifyContent: "space-between"
     },
     title: {
         textAlign: "center",
@@ -70,16 +77,17 @@ const styles = StyleSheet.create ({
     quadrado2: {
         flexDirection: "row",
         justifyContent: "space-around",
-        paddingTop: 10,
-        alignItems: "center"
+        padding: 5,
+        alignItems: "center",
+        gap: 5
     },
     image: {
         height: 50,
         width: 50
     },
     quadrado3: {
-        justifyContent: "center",
-        gap: 15
+        justifyContent: "space-between",
+        alignItems: "flex-end"
     },
     quantidadeText: {
         textAlign: "center",
@@ -121,12 +129,13 @@ const styles = StyleSheet.create ({
         textAlign: "center"
     },
     botao: {
-        padding: 5,
+        padding: 10,
         borderRadius: 5,
         backgroundColor: "#F29F05"
     },
     botaoText: {
         color: "#FFFFFF",
-        textAlign: "center"
+        textAlign: "center",
+        fontSize: 18
     }
 })
