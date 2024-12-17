@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useState } from 'react';
 import { Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
@@ -14,6 +15,10 @@ export default function RootLayout() {
   const [num4, setNum4] = useState<string>("");
   const [num5, setNum5] = useState<string>("");
   const [num6, setNum6] = useState<string>("");
+
+  const sendToLogin = () => {
+    router.push('/login')
+  }
   
   return (
     <View style={styles.tela}>
@@ -79,7 +84,7 @@ export default function RootLayout() {
             </View>
         </View>
 
-        <TouchableOpacity style={styles.botao}>
+        <TouchableOpacity style={styles.botao} onPress={sendToLogin}>
           <Text style={styles.textBotao}>Enviar</Text>
         </TouchableOpacity>
       </View>
