@@ -34,8 +34,6 @@ export const CardUser = ({nome, email, admin} : ICard) => {
     );
 }
 
-const {width, height} = Dimensions.get('window')
-
 const styles = StyleSheet.create ({
     membro: {
         fontSize: 16
