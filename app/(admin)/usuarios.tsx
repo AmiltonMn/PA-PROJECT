@@ -12,12 +12,12 @@ export default function HomeScreen() {
         ></TextInput>
       </View>
       <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={false} email='email@email.com' nome='Admin'></CardUser>
       <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={false} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={false} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={false} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={false} email='email@email.com' nome='Admin'></CardUser>
     </ScrollView>
   );
 }

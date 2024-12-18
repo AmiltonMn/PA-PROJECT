@@ -22,10 +22,11 @@ export const CardUser = ({nome, email, admin} : ICard) => {
                     </View>
                 </View>
                 <View style={styles.quadrado3}>
-                    <Text style={styles.membro}>{admin ? 'Membro' : 'Admin'}</Text>
-                    {admin && 
+                    <Text style={styles.membro}>{admin ? 'Admin' : 'Membro'}</Text>
+                    {!admin && 
                     <TouchableOpacity style={styles.botao}>
-                        <Text style={styles.botaoText}>Tornar Admin</Text>
+                        <Text style={styles.botaoText}>Tornar</Text>
+                        <Text style={styles.botaoText}>Admin</Text>
                     </TouchableOpacity>}
                 </View>
             </View>
@@ -33,16 +34,19 @@ export const CardUser = ({nome, email, admin} : ICard) => {
     );
 }
 
+const {width, height} = Dimensions.get('window')
+
 const styles = StyleSheet.create ({
     membro: {
-        fontSize: 20
+        fontSize: 16
     },
     texto: {
-        fontSize: 20
+        fontSize: 17,
+        wordWrap: "true"
     },
     textos: {
         alignItems: "flex-start",
-        justifyContent: "center",
+        justifyContent: "center"
     },
     imagemQuadrado: {
         backgroundColor: "#F29F05",
@@ -77,7 +81,6 @@ const styles = StyleSheet.create ({
     quadrado2: {
         flexDirection: "row",
         justifyContent: "space-around",
-        padding: 5,
         alignItems: "center",
         gap: 5
     },
@@ -129,13 +132,13 @@ const styles = StyleSheet.create ({
         textAlign: "center"
     },
     botao: {
-        padding: 10,
+        padding: 8,
         borderRadius: 5,
         backgroundColor: "#F29F05"
     },
     botaoText: {
         color: "#FFFFFF",
         textAlign: "center",
-        fontSize: 18
+        fontSize: 16
     }
 })
