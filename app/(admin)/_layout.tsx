@@ -21,16 +21,16 @@ export default function TabLayout() {
           <Image style={styles.image} source={require("@/assets/images/usersIcon.png")}/>
         </>), 
         tabBarLabel: ""}}></Tabs.Screen>
-        <Tabs.Screen name='history' options={{headerShown: false, 
+        <Tabs.Screen name='orcamento' options={{headerShown: false, 
         tabBarIcon: () => (
         <>
-          <Image style={styles.image} source={require("@/assets/images/history.png")}/>
+          <Image style={styles.image} source={require("@/assets/images/orcamentoIcon.png")}/>
         </>), 
         tabBarLabel: ""}}></Tabs.Screen>
-        <Tabs.Screen name='cart' options={{headerShown: false, 
+        <Tabs.Screen name='fluxo' options={{headerShown: false, 
         tabBarIcon: () => (
         <>
-          <Image style={styles.image} source={require("@/assets/images/cart.png")}/>
+          <Image style={styles.image} source={require("@/assets/images/historyIcon.png")}/>
         </>), 
         tabBarLabel: ""}}></Tabs.Screen>
       </Tabs>
