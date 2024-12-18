@@ -1,18 +1,23 @@
 import { CardUser } from '@/Components/cardUser';
 import { MyHeader } from '@/Components/header';
-import { Image, StyleSheet, Platform, View, Dimensions, Text, ScrollView } from 'react-native';
+import { Image, StyleSheet, Platform, View, Dimensions, Text, ScrollView, TextInput } from 'react-native';
 
 export default function HomeScreen() {
   return (
     <ScrollView style={styles.tela}>
       <MyHeader text={'Sobre nós'}></MyHeader>
+      <View style={{justifyContent: 'center', alignItems: 'center', marginTop: 20}}>
+        <TextInput style={styles.search}
+        placeholder='Pesquise um usuario'
+        ></TextInput>
+      </View>
       <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={false} email='email@email.com' nome='Admin'></CardUser>
       <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={false} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={false} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={false} email='email@email.com' nome='Admin'></CardUser>
+      <CardUser admin={false} email='email@email.com' nome='Admin'></CardUser>
     </ScrollView>
   );
 }
@@ -58,5 +63,13 @@ const styles = StyleSheet.create({
   quadrados: {
     padding: 16,
     gap: 17
+  },
+  search: {
+    backgroundColor: "#dbdbdb",
+    width: "93%",
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    padding: 10,
   }
 });

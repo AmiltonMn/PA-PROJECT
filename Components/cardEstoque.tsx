@@ -2,58 +2,41 @@ import React, { useState } from 'react';
 import { Image, StyleSheet, Platform, View, Text, TouchableOpacity, Dimensions } from 'react-native';
 
 interface ICard {
-    nome: string,
-    email: string,
-    admin: boolean
+    title: string,
+    valor: number,
+    quantidade: number
 }
 
-export const CardUser = ({nome, email, admin} : ICard) => {
+export const CardEstoque = ({title, valor, quantidade} : ICard) => {
 
     return (
-        <>
-            <View style={styles.quadrado}>
-                <View style={styles.quadrado2}>
-                    <View style={styles.imagemQuadrado}>
-                        <Image style={styles.image} source={require('../assets/images/tools.png')}/>
-                    </View>
-                    <View style={styles.textos}>
-                        <Text style={styles.texto}>{nome}</Text>
-                        <Text style={styles.texto}>{email}</Text>
-                    </View>
+        <View style={styles.quadrado}>
+            <View style={styles.quadrado2}>
+                <View style={styles.imagemQuadrado}>
+                    <Image style={styles.image} source={require('../assets/images/tools.png')}/>
                 </View>
                 <View style={styles.quadrado3}>
-                    <Text style={styles.membro}>{admin ? 'Admin' : 'Membro'}</Text>
-                    {!admin && 
-                    <TouchableOpacity style={styles.botao}>
-                        <Text style={styles.botaoText}>Tornar</Text>
-                        <Text style={styles.botaoText}>Admin</Text>
-                    </TouchableOpacity>}
+                    <Text style={styles.title}>{title}</Text>
+                    <Text style={styles.valor}>Quantidade</Text>
+                    <View style={styles.fundo}>
+                        <Text style={styles.valorText}>{quantidade}</Text>
+                    </View>
+                    <Text style={styles.valor}>Valor</Text>
+                    <View style={styles.fundo}>
+                        <Text style={styles.valorText}>R${valor}</Text>
+                    </View>
                 </View>
             </View>
-        </>
+        </View>
     );
 }
 
-const {width, height} = Dimensions.get('window')
-
 const styles = StyleSheet.create ({
-    membro: {
-        fontSize: 16
-    },
-    texto: {
-        fontSize: 17,
-        wordWrap: "true"
-    },
-    textos: {
-        alignItems: "flex-start",
-        justifyContent: "center"
-    },
     imagemQuadrado: {
-        backgroundColor: "#F29F05",
-        width: 70,
-        height: 70,
+        backgroundColor: "#D9D9D9",
+        opacity: 0.35,
         padding: 10,
-        borderRadius: 9999,
+        borderRadius: 5,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -63,34 +46,34 @@ const styles = StyleSheet.create ({
         shadowRadius: 4.65,
 
         elevation: 6,
+        height: 190
     },
     quadrado: {
-        flexDirection: "row",
         padding: 10,
         borderRadius: 5,
         backgroundColor: "#FFFFFF",
         margin: 15,
-        gap: 5,
-        justifyContent: "space-between"
+        marginBottom: 0
     },
     title: {
         textAlign: "center",
         fontSize: 17,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        paddingBottom: 10
     },
     quadrado2: {
         flexDirection: "row",
         justifyContent: "space-around",
-        alignItems: "center",
-        gap: 5
+        paddingTop: 10,
+        alignItems: "center"
     },
     image: {
-        height: 50,
-        width: 50
+        height: 170,
+        width: 140
     },
     quadrado3: {
-        justifyContent: "space-between",
-        alignItems: "flex-end"
+        justifyContent: "center",
+        gap: 5
     },
     quantidadeText: {
         textAlign: "center",
@@ -132,13 +115,12 @@ const styles = StyleSheet.create ({
         textAlign: "center"
     },
     botao: {
-        padding: 8,
+        padding: 5,
         borderRadius: 5,
         backgroundColor: "#F29F05"
     },
     botaoText: {
         color: "#FFFFFF",
-        textAlign: "center",
-        fontSize: 16
+        textAlign: "center"
     }
 })
