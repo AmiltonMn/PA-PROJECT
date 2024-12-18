@@ -15,9 +15,21 @@ export default function HomeScreen() {
     const sendToRegister = () => {
         router.push('/register')
     }
+
+    const sendToRecover = () => {
+      router.push('/recoverPass')
+    }
     
     const [emailUsuario, setEmailUsuario] = useState<string>("");
     const [pass, setPass] = useState<string>("");
+
+    const verifyUser = (email: string) => {
+      if (emailUsuario.includes("@FERramentaria.com")) {
+        sendToAdmin()
+      } else {
+        sendToTabs()
+      }
+    }
         
     return (
         <View style={styles.tela}>
@@ -47,10 +59,15 @@ export default function HomeScreen() {
                 secureTextEntry={true}
             />
             </View>
-    
-            <TouchableOpacity style={styles.botao}>
+            <View style={{flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start', position: 'relative', right: 30, bottom: 8}}>
+              <Text style={{fontSize: 12}}>Esqueceu a senha? </Text>
+              <Text style={{fontSize: 12, color: '#192870', fontWeight: 'bold'}} onPress={sendToRecover}>Clique aqui</Text>
+            </View>
+  
+            <TouchableOpacity style={styles.botao} onPress={() => verifyUser(emailUsuario)}>
                 <Text style={styles.textBotao}>Logar</Text>
             </TouchableOpacity>
+
             <View style={styles.textos}>
                 <Text style={styles.textConta}>Não tem conta? </Text>
                 <Text style={styles.clique} onPress={sendToRegister}>Clique aqui</Text>

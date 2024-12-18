@@ -11,14 +11,14 @@ export default function TabLayout() {
         <Tabs.Screen name='index' options={{headerShown: false, 
         tabBarIcon: () => (
         <>
-          <Image style={styles.image} source={require("@/assets/images/home.png")}/>
+          <Image style={styles.image} source={require("@/assets/images/stocksIcon.png")}/>
         </>),
         tabBarLabel: "",
        }}></Tabs.Screen>
-        <Tabs.Screen name='explore' options={{headerShown: false, 
+        <Tabs.Screen name='usuarios' options={{headerShown: false, 
         tabBarIcon: () => (
         <>
-          <Image style={styles.image} source={require("@/assets/images/tools.png")}/>
+          <Image style={styles.image} source={require("@/assets/images/usersIcon.png")}/>
         </>), 
         tabBarLabel: ""}}></Tabs.Screen>
         <Tabs.Screen name='history' options={{headerShown: false, 

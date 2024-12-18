@@ -1,18 +1,33 @@
-import { CardUser } from '@/Components/cardUser';
+import { Card } from '@/Components/card';
 import { MyHeader } from '@/Components/header';
-import { Image, StyleSheet, Platform, View, Dimensions, Text, ScrollView } from 'react-native';
+import { StyleSheet, Image, Platform, View, Dimensions, TextInput, ScrollView } from 'react-native';
 
-export default function HomeScreen() {
+export default function TabTwoScreen() {
   return (
     <ScrollView style={styles.tela}>
-      <MyHeader text={'Sobre nós'}></MyHeader>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
-      <CardUser admin={true} email='email@email.com' nome='Admin'></CardUser>
+      <MyHeader text={"Produtos"}></MyHeader>
+      <View style={{justifyContent: 'center', alignItems: 'center', marginTop: 20}}>
+        <TextInput style={styles.search}
+        placeholder='Pesquise uma ferramenta'
+        ></TextInput>
+      </View>
+      <Card title='Martelo' valor={123.88}></Card>
+      <Card title='Chave Inglesa' valor={20.81}></Card>
+      <Card title='Chave de Fenda' valor={4.95}></Card>
+      <Card title='Trena' valor={27.90}></Card>
+      <Card title='Parafuso' valor={6.04}></Card>
+      <Card title='Prego' valor={16.79}></Card>
+      <Card title='Nivel' valor={24.19}></Card>
+      <Card title='Chave de Boca' valor={15.90}></Card>
+      <Card title='Grifo' valor={35.25}></Card>
+      <Card title='Macaco' valor={178.18}></Card>
+      <Card title='Braçadeira' valor={37.17}></Card>
+      <Card title='Parafusadeira' valor={309.00}></Card>
+      <Card title='Serrote' valor={28.90}></Card>
+      <Card title='Serra Circular' valor={444.90}></Card>
+      <Card title='Chave Philips' valor={8.87}></Card>
+      <Card title='Chave Allen' valor={12.49}></Card>
+      <Card title='Torquimetro' valor={129.90}></Card>
     </ScrollView>
   );
 }
@@ -20,43 +35,27 @@ export default function HomeScreen() {
 const {width, height} = Dimensions.get('window')
 
 const styles = StyleSheet.create({
+  headerImage: {
+    color: '#808080',
+    bottom: -90,
+    left: -35,
+    position: 'absolute',
+  },
   titleContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
     gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
   },
   tela: {
     width: width,
     height: height,
-    backgroundColor: '#192870',
-    
+    backgroundColor: '#192870'
   },
-  title: {
-    color: "#F29F05",
-    fontSize: 20,
-    fontWeight: "bold"
-  },
-  desc: {
-    fontSize: 20
-  },
-  quadrado: {
-    backgroundColor: "#FFFFFF",
-    padding: 16,
-    borderRadius: 5
-  },
-  quadrados: {
-    padding: 16,
-    gap: 17
+  search: {
+    backgroundColor: "#dbdbdb",
+    width: "93%",
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    padding: 10,
   }
 });
